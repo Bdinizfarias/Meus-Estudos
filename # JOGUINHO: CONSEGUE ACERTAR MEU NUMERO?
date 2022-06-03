@@ -1,0 +1,10 @@
+# JOGUINHO: CONSEGUE ACERTAR MEU NUMERO?
+import random
+numero = random.randint(0,3)
+advinhe = int(input("Que numero estou pensando de 0 a 3? "))
+if advinhe == numero:
+    print('Acertou arrombado!')
+else:
+    print('Deu azar, tenta de novo!')
+print(f'Resposta correta: {numero}')
+print('------Vamos de novo????-----')
