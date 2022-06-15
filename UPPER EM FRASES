@@ -1,0 +1,42 @@
+# Input de frases e escolhendo uma letra maior
+
+
+
+frase = input('Digite uma frase: ')
+
+tamanho_frase = len(frase)
+
+contador = 0
+
+nova_string = ''
+
+input_usuario = input('Qual letra quer que se torne maiúscula? ')
+
+
+
+
+
+while contador < tamanho_frase:
+
+    letra = frase[contador]
+
+    if letra == input_usuario:
+
+        nova_string += input_usuario.upper()
+
+
+
+    else:
+
+        nova_string += letra
+
+    contador += 1
+
+
+
+print(nova_string)
+
+
+
+
+
