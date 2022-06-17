@@ -1,0 +1,42 @@
+palavra_secreta = 'otorrinolaringologista'
+digitadas = []
+chances = 5
+print(f'Bem vindo ao jogo da forca! Você terá {chances} chances. Tema: especialidade médica. ')
+
+while True:
+    if chances < 0:
+        print('Você perfeu!')
+        break
+
+    letra = input('Digite uma letra: ')
+
+    if len(letra) > 1:
+        print('Ahhhhhfz, isso nao vale! Digite apenas uma letra!')
+        continue
+
+    digitadas.append(letra)
+
+    if letra in palavra_secreta:
+        print(f'Show, a letra "{letra}" existe na palavra secreta.')
+    else:
+        print(f'Eitaaa, a letra "{letra}" NÃO EXISTE na palavra secreta! Tenta novamente!')
+        digitadas.pop()
+
+    palavra_secreta_temporario = ''
+    for letra_secreta in palavra_secreta:
+        if letra_secreta in digitadas:
+            palavra_secreta_temporario += letra_secreta
+        else:
+            palavra_secreta_temporario += '*'
+
+    if palavra_secreta_temporario == palavra_secreta:
+        print(f'Que legal, VOCÊ GANHOU!!!!! A palavra era {palavra_secreta_temporario}.')
+        break
+    else:
+        print(f'A palavra secreta está assim: {palavra_secreta_temporario}.')
+
+    if letra not in palavra_secreta:
+        chances -= 1
+
+    print(f'Você ainda tem {chances} chances.')
+    print()
